@@ -38,7 +38,7 @@ selectVideo = (evt) => {
     currentVideo.classList.add('playing')
 
     // update src
-    elemVideo.innerHTML = '<source src="https://siasky.net/' + el.dataset.skylink + '" type="video/mp4">'
+    elemVideo.innerHTML = '<source src="https://scp.techandsupply.ca/' + el.dataset.publink + '" type="video/mp4">'
     elemVideo.load();
     btnPlay.click()
 
