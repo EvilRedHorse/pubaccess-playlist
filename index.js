@@ -32,13 +32,13 @@ uploadPlaylist = (evt) => {
     var formData = new FormData();
     formData.append('file', blob);
     const uuid = generateUUID()
-    fetch(`https://siasky.net/skynet/skyfile/${uuid}?filename=playlist.html`, {
+    fetch(`https://scp.techandsupply.ca/pubaccess/pubfile/${uuid}?filename=playlist.html`, {
         method: 'POST',
         body: formData
     })
         .then((response) => response.json())
         .then((result) => {
-            alert("Your playlist is at https://siasky.net/" + result.skylink);
+            alert("Your playlist is at https://scp.techandsupply.ca/" + result.publink);
             elemOverlay.style.display = 'none'
         })
         .catch((error) => {
@@ -51,14 +51,14 @@ uploadVideo = (file) => {
     var formData = new FormData();
     formData.append('file', file);
     const uuid = generateUUID()
-    fetch(`https://siasky.net/skynet/skyfile/${uuid}?filename=${file.name}`, {
+    fetch(`https://scp.techandsupply.ca/pubaccess/pubfile/${uuid}?filename=${file.name}`, {
         method: 'POST',
         body: formData
     })
         .then(response => response.json())
         .then(response => {
 
-            addVideoEntryToPlaylist(file.name, response.skylink)
+            addVideoEntryToPlaylist(file.name, response.publink)
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -88,7 +88,7 @@ addUploadingEntryToPlaylist = (name) => {
     document.getElementById('playlist-items').appendChild(entry)
 }
 
-addVideoEntryToPlaylist = (name, skylink) => {
+addVideoEntryToPlaylist = (name, publink) => {
     for (const entry of document.querySelectorAll('[data-id]')) {
         if (entry.dataset.id === name) {
             for (const ch of entry.childNodes) {
@@ -97,7 +97,7 @@ addVideoEntryToPlaylist = (name, skylink) => {
                 }
             }
             entry.closest('tr').onclick = selectVideo
-            entry.dataset.skylink = skylink
+            entry.dataset.publink = publink
             entry.className = "video"
             break;
         }
@@ -125,13 +125,13 @@ window.addEventListener('DOMContentLoaded', () => {
     btnReset = document.getElementById("btn-reset")
     btnGenerate.onclick = uploadPlaylist
 
-    document.getElementById('created').innerHTML += `<a href=${window.location.href}>Skynet</a>`
+    document.getElementById('created').innerHTML += `<a href=${window.location.href}>Public Portals</a>`
 });
 
 const playerHTML = `
 <html lang="en">
 <head>
-    <title>Skynet Playlist Builder</title>
+    <title>Public Portals Playlist Builder</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style type="text/css">    
