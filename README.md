@@ -2,7 +2,7 @@
 Build your video playlist and share it
 
 ## Public Portals Dapp URL
-change -> https://siasky.net/nAAJroJW0Z7cYcpev1VVjJXXGU1WF8YQ8eUs8dJHTDEXqQ
+https://scp.techandsupply.ca/IABMg3cQqy7njNJbqpVWaKQJuRAeQ4a-3n4w-MGfF9M9PA
 
 ## Demo Video
 change -> https://siasky.net/AABSR21FcA-YmenaD-NvOb727LrVDAsEw_Bz1r4HxglcIQ
